@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maadhu | Images</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="index.html">/home/</a>
+        <a href="images.html">/images/</a>
+    </nav>
+
+    <hr>
+
+    <!-- GALLERY -->
+    <h2>Gallery</h2>
+
+    <div class="gallery">
+
+        <img src="pictures/output.png" alt="Output Image">
+        <img src="pictures/clo.jpeg" alt="Clo Image">
+        <img src="pictures/badge.jpeg" alt="Badge Image">
+        <img src="pictures/moon.jpeg" alt="moon Image">
+        <img src="https://curity.io/images/resources/code-examples/code-examples-github.jpg" alt="GitHub Image">
+    </div>
+
+    <!-- FOOTER -->
+    <hr>
+
+    <footer>
+        <p>
+            Built with
+            <a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML</a>
+        </p>
+
+        <p>&copy; 2026 Maadhu.</p>
+    </footer>
+<script>
+const button = document.getElementById("theme-toggle");
+
+function updateIcon(){
+    if(document.body.classList.contains("light-mode")){
+        button.innerHTML = "🌙";
+    } else {
+        button.innerHTML = "☀";
+    }
+}
+
+button.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-mode");
+
+    if(document.body.classList.contains("light-mode")){
+        localStorage.setItem("theme", "light");
+    } else {
+        localStorage.setItem("theme", "dark");
+    }
+
+    updateIcon();
+});
+
+/* LOAD SAVED THEME */
+if(localStorage.getItem("theme") === "light"){
+    document.body.classList.add("light-mode");
+}
+
+updateIcon();
+</script>
+
+</body>
+
+</html>

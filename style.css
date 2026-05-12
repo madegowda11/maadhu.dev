@@ -1,0 +1,372 @@
+/* =========================
+   RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================
+   THEME VARIABLES
+========================= */
+:root{
+    --bg:#000000;
+    --text:#ffffff;
+    --link:#4da6ff;
+    --border:#222222;
+}
+
+/* LIGHT MODE */
+.light-mode{
+    --bg:#ffffff;
+    --text:#000000;
+    --link:#0066cc;
+    --border:#cccccc;
+}
+
+/* =========================
+   BODY
+========================= */
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Courier New", monospace;
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+    line-height:1.7;
+    transition:0.3s ease;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1,h2{
+    margin-top:30px;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+/* =========================
+   LINKS
+========================= */
+a{
+    color:var(--link);
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* NAVIGATION */
+nav{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:18px;
+    margin-bottom:25px;
+}
+
+/* NAV LINKS */
+nav a{
+    color:var(--link);
+    font-weight:bold;
+    text-decoration:none;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* THEME TOGGLE */
+#theme-toggle{
+    background:none;
+    border:none;
+    color:var(--text);
+    cursor:pointer;
+    font-size:18px;
+    padding:0;
+    line-height:1;
+}
+
+#theme-toggle:hover{
+    opacity:0.7;
+}
+
+/* =========================
+   THEME TOGGLE BUTTON
+========================= */
+#theme-toggle{
+    background:none;
+    border:none;
+    color:var(--text);
+    cursor:pointer;
+    font-size:20px;
+    font-family:"Courier New", monospace;
+}
+
+#theme-toggle:hover{
+    opacity:0.7;
+}
+
+/* =========================
+   HORIZONTAL LINE
+========================= */
+hr{
+    border:none;
+    border-top:1px solid var(--border);
+    margin:20px 0;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.about-container{
+    display:flex;
+    align-items:flex-start;
+    gap:25px;
+    margin-top:20px;
+}
+
+/* PROFILE IMAGE */
+.profile{
+    width:300px;
+    max-width:100%;
+    height:auto;
+    border-radius:8px;
+    border:1px solid var(--border);
+}
+
+/* ABOUT TEXT */
+.about-text{
+    flex:1;
+}
+
+/* =========================
+   PARAGRAPH
+========================= */
+p{
+    margin-bottom:15px;
+}
+
+/* =========================
+   CUSTOM LISTS
+========================= */
+ul{
+    list-style:none;
+    margin-top:15px;
+    padding-left:0;
+}
+
+/* MAIN LIST ITEMS */
+ul > li{
+    position:relative;
+    padding-left:30px;
+    margin-bottom:18px;
+    line-height:1.8;
+}
+
+/* MAIN BULLET */
+ul > li::before{
+    content:">";
+    position:absolute;
+    left:0;
+    color:var(--link);
+    font-weight:bold;
+}
+
+/* SUB LIST */
+ul ul{
+    margin-top:10px;
+    margin-left:10px;
+}
+
+/* SUB LIST ITEMS */
+ul ul li{
+    position:relative;
+    padding-left:25px;
+    margin-bottom:10px;
+}
+
+/* SUB BULLET */
+ul ul li::before{
+    content:"-";
+    position:absolute;
+    left:0;
+    color:#888888;
+}
+
+/* =========================
+   EXPERIENCE SECTION
+========================= */
+details{
+    margin-bottom:15px;
+    background:none;
+    border:none;
+    box-shadow:none;
+    padding:0;
+}
+
+summary{
+    cursor:pointer;
+    color:var(--text);
+    font-weight:bold;
+    list-style:none;
+    outline:none;
+}
+
+/* REMOVE DEFAULT ARROW */
+summary::-webkit-details-marker{
+    display:none;
+}
+
+/* CUSTOM ARROW */
+summary::before{
+    content:"▶ ";
+    color:var(--link);
+}
+
+/* OPEN STATE */
+details[open] summary::before{
+    content:"▼ ";
+}
+
+/* REMOVE CLICK OUTLINE */
+summary:focus{
+    outline:none;
+}
+
+/* EXPERIENCE CONTENT */
+details ul{
+    margin-top:10px;
+    margin-left:20px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.buttons img{
+    width:100%;
+    height:auto;
+    border:1px solid var(--border);
+}
+
+/* =========================
+   IMAGE GALLERY
+========================= */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:8px;
+    border:1px solid var(--border);
+    transition:0.3s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    margin-top:40px;
+    text-align:center;
+    color:#888;
+    padding-bottom:20px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width:600px){
+
+    body{
+        padding:15px;
+        font-size:14px;
+    }
+
+    h1{
+        font-size:24px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    nav{
+        justify-content:flex-start;
+        flex-wrap:wrap;
+    }
+
+    nav a{
+        margin-right:10px;
+    }
+
+    .about-container{
+        flex-direction:column;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .buttons{
+        grid-template-columns:1fr;
+    }
+
+    .gallery img{
+        height:auto;
+    }
+
+    .profile{
+        max-width:100%;
+    }
+}
+
+/* ALL IMAGES */
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/* TOP PROFILE IMAGE */
+.top-image{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:50%;
+    border:1px solid var(--border);
+}
+
+/* GALLERY IMAGES */
+.gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:8px;
+    border:1px solid var(--border);
+    transition:0.3s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
